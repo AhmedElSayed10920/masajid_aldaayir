@@ -63,15 +63,36 @@
         </div>
     </footer>
     <script>
+        // document.getElementById('nameInput').addEventListener('input', function () {
+        //     let words = this.value.trim().split(/\s+/); // تقسيم النص على المسافات
+        //     if (words.length > 3) {
+        //         document.getElementById('warning').style.display = 'block';
+        //         this.value = words.slice(0, 3).join(' '); // الاحتفاظ بثلاث كلمات فقط
+        //     } else {
+        //         document.getElementById('warning').style.display = 'none';
+        //     }
+        // });
         document.getElementById('nameInput').addEventListener('input', function () {
-            let words = this.value.trim().split(/\s+/); // تقسيم النص على المسافات
-            if (words.length > 3) {
-                document.getElementById('warning').style.display = 'block';
+            let words = this.value.trim().split(/\s+/); // تقسيم النص بناءً على المسافات
+            let warning = document.getElementById('warning');
+
+            if (this.value.trim() === "") {
+                warning.style.display = 'none'; // إخفاء التحذير إذا كان الإدخال فارغًا
+                return;
+            }
+
+            if (words.length < 2) {
+                warning.textContent = "يجب إدخال اسمين على الأقل!";
+                warning.style.display = 'none';
+            } else if (words.length > 3) {
+                warning.textContent = "يُسمح بثلاثة أسماء فقط!";
+                warning.style.display = 'block';
                 this.value = words.slice(0, 3).join(' '); // الاحتفاظ بثلاث كلمات فقط
             } else {
-                document.getElementById('warning').style.display = 'none';
+                warning.style.display = 'none'; // إخفاء التحذير إذا كان الإدخال صحيحًا
             }
         });
+
         function displayFileName() {
             var input = document.getElementById('uploadSection');
             var fileNameDisplay = document.getElementById('fileName');
@@ -108,11 +129,11 @@
             let maxWidth = 1200; // الحد الأقصى للعرض
             let fontSize = 200; // الحجم الافتراضي
 
-            ctx.font = `${fontSize}px 'Doran', 'Amiri' , serif`;
+            ctx.font = `${fontSize}px 'Doran'`;
 
             while (ctx.measureText(name).width > maxWidth && fontSize > 10) {
                 fontSize -= 5; // تقليل الحجم تدريجيًا
-                ctx.font = `${fontSize}px 'Doran', 'Amiri', serif`;
+                ctx.font = `${fontSize}px 'Doran'`;
             }
 
             ctx.fillStyle = "White";
@@ -120,20 +141,21 @@
             ctx.fillText(name, canvas.width / 2, canvas.height - 1300);
         }
         function drawSecondTemplate(ctx, name, canvas) {
-            let maxWidth = 800; // الحد الأقصى لعرض الاسم
-            let fontSize = 200; // الحجم الافتراضي
+            let maxWidth = 1000; // الحد الأقصى لعرض الاسم
+            let fontSize = 150; // الحجم الافتراضي
 
-            ctx.font = `${fontSize}px 'Doran', 'Amiri', serif`;
+            ctx.font = `${fontSize}px 'Doran'`;
 
             // تقليل حجم الخط حتى يصبح النص ضمن الحد الأقصى
             while (ctx.measureText(name).width > maxWidth && fontSize > 10) {
                 fontSize -= 5; // تقليل الحجم تدريجيًا
-                ctx.font = `${fontSize}px 'Doran','Amiri', serif`;
+                ctx.font = `${fontSize}px 'Doran'`;
             }
 
             ctx.fillStyle = "#2CA08B";
-            ctx.textAlign = "left";
-            ctx.fillText(name, 270, canvas.height - 1550);
+            ctx.textAlign = "center"; // محاذاة أفقية للنص
+            ctx.textBaseline = "middle"; // محاذاة عمودية للنص
+            ctx.fillText(name, 620, canvas.height - 1550);
         }
 
         function previewCard() {
