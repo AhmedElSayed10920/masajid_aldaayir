@@ -129,11 +129,11 @@
             let maxWidth = 1200; // الحد الأقصى للعرض
             let fontSize = 200; // الحجم الافتراضي
 
-            ctx.font = `${fontSize}px 'Doran'`;
+            ctx.font = `${fontSize}px 'Doran' , 'Amiri', serif`;
 
             while (ctx.measureText(name).width > maxWidth && fontSize > 10) {
                 fontSize -= 5; // تقليل الحجم تدريجيًا
-                ctx.font = `${fontSize}px 'Doran'`;
+                ctx.font = `${fontSize}px 'Doran' ,'Amiri', serif`;
             }
 
             ctx.fillStyle = "White";
@@ -144,12 +144,12 @@
             let maxWidth = 1000; // الحد الأقصى لعرض الاسم
             let fontSize = 150; // الحجم الافتراضي
 
-            ctx.font = `${fontSize}px 'Doran'`;
+            ctx.font = `${fontSize}px 'Doran' ,'Amiri', serif`;
 
             // تقليل حجم الخط حتى يصبح النص ضمن الحد الأقصى
             while (ctx.measureText(name).width > maxWidth && fontSize > 10) {
                 fontSize -= 5; // تقليل الحجم تدريجيًا
-                ctx.font = `${fontSize}px 'Doran'`;
+                ctx.font = `${fontSize}px 'Doran' ,'Amiri', serif`;
             }
 
             ctx.fillStyle = "#2CA08B";
