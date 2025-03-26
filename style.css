@@ -1,0 +1,268 @@
+/* خطوط الموقع */
+@font-face {
+    font-family: Doran;
+    font-weight: 800;
+    src: url('fonts/Doran ExtraBold.ttf');
+}
+@font-face {
+    font-family: Doran;
+    font-weight: 700;
+    src: url('fonts/Doran Bold.ttf');
+}
+@font-face {
+    font-family: Doran;
+    font-weight: 500;
+    src: url('fonts/Doran Medium.ttf');
+}
+@font-face {
+    font-family: Doran;
+    font-weight: 400;
+    src: url('fonts/Doran Regular.ttf');
+}
+@font-face {
+    font-family: Doran;
+    font-weight: 300;
+    src: url('fonts/Doran Light.ttf');
+}
+@font-face {
+    font-family: Doran;
+    font-weight: 100;
+    src: url('fonts/Doran Thin.ttf');
+}
+
+/* إعادة الضبط الأساسية */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 100%; /* منع أي عنصر من تجاوز عرض الشاشة */
+}
+
+/* الهيكل العام */
+html, body {
+    height: 100%;
+    font-family: 'Amiri', serif;
+    background-color: white;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* إخفاء الاسكرول الأفقي */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    width: 100vw; /* عرض يساوي عرض الشاشة بالضبط */
+    position: relative;
+}
+
+/* المحتوى الرئيسي */
+.content {
+    flex: 1;
+    padding: 15px 0;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* الشعار */
+.logo {
+    max-width: 130px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* الصورة الرئيسية */
+.main-image {
+    max-width: 90%;
+    height: auto;
+    margin: 15px auto;
+    display: block;
+}
+
+/* النص الرئيسي */
+.main-text {
+    font-size: 22px;
+    margin: 15px 0;
+    color: #55956E;
+    font-weight: 700;
+    padding: 0 10px;
+    word-break: keep-all; /* منع كسر الكلمات */
+}
+
+/* الأزرار */
+.start-button {
+    background-color: #55956E;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.start-button:hover {
+    background-color: #4a7d5d;
+    transform: scale(1.05);
+}
+
+/* الفوتر */
+footer {
+    background-color: #5A9670;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.footer-content p {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 15px;
+    white-space: nowrap; /* منع التفاف النص */
+}
+
+.copyright {
+    font-size: 13px;
+    margin-top: 8px;
+    padding: 5px 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* التكيف مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    body {
+        padding: 0 8px;
+    }
+    
+    .content {
+        padding: 10px 0;
+    }
+
+    .logo {
+        max-width: 110px;
+    }
+
+    .main-text {
+        font-size: 19px;
+        margin: 12px 0;
+    }
+
+    .start-button {
+        padding: 10px 25px;
+        font-size: 16px;
+        min-width: 180px;
+    }
+
+    footer {
+        padding: 12px 5px; /* تقليل الهوامش الجانبية */
+    }
+
+    .footer-content p {
+        font-size: 13px;
+        white-space: normal; /* السماح بالتفاف النص عند الضرورة */
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-text {
+        font-size: 17px;
+    }
+
+    .footer-content p {
+        font-size: 12px;
+    }
+
+    .copyright {
+        font-size: 11px;
+    }
+}
+
+.circle {
+    width: 60px; /* حجم الدائرة */
+    height: 60px; /* نفس الحجم ليكون العنصر دائريًا */
+    background-color: #55956E;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 50%; /* يجعل العنصر دائريًا */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto; /* توسيط الدائرة */
+}
+.selecttemp{
+    text-align: center;
+    font-size: 35px;
+}
+
+img.selected {
+    border: 5px solid #55956E; 
+    border-radius: 10px;
+}
+.page3title {
+    font-size: 35px;
+    font-weight: 600;
+    color: #55956E;
+}
+#displayImage{
+    border: 5px solid #55956E; 
+    border-radius: 10px;
+}
+
+input:focus {
+    border: 3px solid #55956E !important;
+    outline: none !important;
+    box-shadow: 0 0 5px #55956E  !important; 
+}
+
+input {
+    text-align: center; 
+}
+
+input::placeholder {
+    text-align: center;
+    color: gray; 
+}
+canvas {
+    border: 2px solid #55956E;
+    margin-top: 20px;
+    margin: 0 auto;
+    width: 250px;
+    display: none;
+}
+input[type="file"] {
+    display: none;
+}
+
+.upload-btn {
+    background-color: #55956E;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
